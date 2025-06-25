@@ -36,7 +36,7 @@ const Dashboard = () => {
           ></textarea>
           <button
             onClick={handleSubmit}
-            className="bg-primary text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition flex items-center gap-2"
+            className="bg-[gray] text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition flex items-center gap-2"
           >
             <Send className="w-5 h-5" /> Submit Ticket
           </button>
