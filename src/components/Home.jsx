@@ -6,6 +6,9 @@ const Home = () => {
   return (
     <>
       <section className="bg-gradient-to-r from-blue-50 to-blue-100 text-primary py-20 px-6 md:px-20 min-h-screen flex items-center relative overflow-hidden">
+        <Link to='/log-in'>
+        <ArrowRight />
+        </Link>
         {/* Decorative shapes */}
         <div className="absolute top-0 left-0 w-40 h-40 bg-accent opacity-20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-0 right-0 w-52 h-52 bg-secondary opacity-20 rounded-full blur-3xl animate-ping"></div>
@@ -21,13 +24,13 @@ const Home = () => {
 
           <div className="flex justify-center gap-4 flex-wrap">
             <Link to='/dashboard'>
-              <button className="bg-primary hover:bg-blue-800 text-white px-6 py-3 rounded-xl text-lg shadow-lg transition duration-300 flex items-center gap-2">
+              <button className="bg-primary hover:bg-blue-800 text-[#333] px-6 py-3 rounded-xl text-lg shadow-lg transition duration-300 flex items-center gap-2 hover:text-[#fff] cursor-pointer">
                 <Sparkles className="w-5 h-5" /> Get Started
               </button>
             </Link>
 
-            <button className="border-2 border-secondary bg-secondary hover:bg-green-700 text-white px-6 py-3 rounded-xl text-lg transition duration-300 flex items-center gap-2">
-              <Info className="w-5 h-5" /> Learn More
+            <button className="border-2 border-white bg-secondary hover:bg-[#fff] text-[#333] px-6 py-3 rounded-xl text-lg transition duration-300 flex items-center gap-2 cursor-pointer">
+              <Info className="w-5 h-5 text-[#333]" /> Learn More
             </button>
           </div>
 
