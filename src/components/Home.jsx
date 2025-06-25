@@ -35,7 +35,7 @@ const Home = () => {
           </div>
 
           {/* Features Section */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-left cursor-pointer">
             <div className="bg-white p-6 rounded-2xl shadow-xl">
               <h3 className="text-xl font-bold mb-2 text-primary">⚡ AI Assistant</h3>
               <p className="text-sm text-gray-600">Get immediate responses from Gemini AI on submitted tickets.</p>
