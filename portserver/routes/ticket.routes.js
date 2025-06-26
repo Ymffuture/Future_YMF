@@ -6,6 +6,11 @@ import adminMiddleware from '../middlewares/admin.js';
 
 const router = express.Router();
 
+router.get('/', protect, async (req, res) => {
+  const tickets = await Ticket.find({ userId: req.user.id }).sort({ createdAt: -1 });
+  res.json(tickets);
+});
+
 // Create Ticket (Protected)
 router.post('/', authMiddleware, submitTicket);
 
