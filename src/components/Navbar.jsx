@@ -8,9 +8,9 @@ const Navbar = () => {
   const isLoggedIn = localStorage.getItem('token');
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle('dark');
-  };
+  setDarkMode(!darkMode); // Assuming this updates your state
+  document.body.classList.toggle('dark'); // Target the body element
+};
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -60,7 +60,7 @@ const Navbar = () => {
                 <LogOut className="w-4 h-4" /> Logout
               </button>
             ) : (
-              <Link to="/login" className="text-green-600 flex items-center gap-1 hover:underline">
+              <Link to="/sign-in" className="text-green-600 flex items-center gap-1 hover:underline">
                 <LogIn className="w-4 h-4" /> Login
               </Link>
             )}
@@ -105,7 +105,7 @@ const Navbar = () => {
               </li>
             ) : (
               <li>
-                <Link to="/login" className="text-green-600 flex items-center gap-2">
+                <Link to="/sign-in" className="text-green-600 flex items-center gap-2">
                   <LogIn className="w-4 h-4" /> Login
                 </Link>
               </li>
