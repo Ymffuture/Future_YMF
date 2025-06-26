@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchTickets } from '../features/tickets/ticketSlice';
 import { submitTicket } from '../features/tickets/ticketSlice';
 import { CheckCircle, Send, HelpCircle, ClipboardList } from 'lucide-react';
 
@@ -13,7 +14,13 @@ const Dashboard = () => {
     dispatch(submitTicket(message));
     setMessage('');
   };
+  
+useEffect(() => {
+  dispatch(fetchTickets());
+}, [dispatch]);
+ 
 
+  
   return (
     <>
     <div className="min-h-screen bg-background p-6 text-primary">
