@@ -24,7 +24,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex justify-center items-center bg-background p-4">
-      <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-6 rounded-xl shadow-md">
+      <form onSubmit={handleSubmit} className="w-full max-w-md bg-[#fff] p-6 rounded-xl shadow-md">
         <h2 className="text-xl font-bold mb-4 text-primary">Login</h2>
         {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
         <input
@@ -45,7 +45,7 @@ const Login = () => {
           required
           className="w-full p-2 mb-4 border rounded"
         />
-        <button type="submit" className="w-full bg-primary text-white py-2 rounded hover:bg-blue-700">
+        <button type="submit" className="w-full  text-[#333] py-2 rounded hover:bg-blue-700">
           Login
         </button>
       </form>
