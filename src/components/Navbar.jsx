@@ -1,9 +1,21 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon, LogOut, LogIn } from 'lucide-react';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+  const isLoggedIn = localStorage.getItem('token');
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.documentElement.classList.toggle('dark');
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    window.location.href = '/';
+  };
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -13,7 +25,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md text-primary sticky top-0 z-50">
+    <nav className="bg-white dark:bg-gray-900 shadow-md text-primary dark:text-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
@@ -29,17 +41,36 @@ const Navbar = () => {
                 to={link.path}
                 className={({ isActive }) =>
                   isActive
-                    ? 'text-primary font-semibold underline'
-                    : 'text-gray-600 hover:text-primary transition'
+                    ? 'text-primary dark:text-accent font-semibold underline'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-primary transition'
                 }
               >
                 {link.name}
               </NavLink>
             ))}
+            <button
+              onClick={toggleDarkMode}
+              className="text-gray-600 dark:text-gray-300 hover:text-accent"
+              title="Toggle Theme"
+            >
+              {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+            {isLoggedIn ? (
+              <button onClick={handleLogout} className="text-red-500 flex items-center gap-1 hover:underline">
+                <LogOut className="w-4 h-4" /> Logout
+              </button>
+            ) : (
+              <Link to="/login" className="text-green-600 flex items-center gap-1 hover:underline">
+                <LogIn className="w-4 h-4" /> Login
+              </Link>
+            )}
           </div>
 
           {/* Mobile Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-4">
+            <button onClick={toggleDarkMode} title="Toggle Theme">
+              {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
             <button onClick={() => setOpen(!open)}>
               {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -49,7 +80,7 @@ const Navbar = () => {
 
       {/* Mobile Nav */}
       {open && (
-        <div className="md:hidden px-4 pb-4 bg-white shadow-sm border-t">
+        <div className="md:hidden px-4 pb-4 bg-white dark:bg-gray-800 border-t dark:border-gray-700">
           <ul className="space-y-3">
             {navLinks.map(link => (
               <li key={link.name}>
@@ -58,14 +89,27 @@ const Navbar = () => {
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
                     isActive
-                      ? 'block text-primary font-semibold'
-                      : 'block text-gray-600 hover:text-primary'
+                      ? 'block text-primary dark:text-accent font-semibold'
+                      : 'block text-gray-600 dark:text-gray-300 hover:text-primary'
                   }
                 >
                   {link.name}
                 </NavLink>
               </li>
             ))}
+            {isLoggedIn ? (
+              <li>
+                <button onClick={handleLogout} className="text-red-500 flex items-center gap-2">
+                  <LogOut className="w-4 h-4" /> Logout
+                </button>
+              </li>
+            ) : (
+              <li>
+                <Link to="/login" className="text-green-600 flex items-center gap-2">
+                  <LogIn className="w-4 h-4" /> Login
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       )}
@@ -74,3 +118,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
