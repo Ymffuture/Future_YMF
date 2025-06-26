@@ -14,7 +14,7 @@ const App =()=> {
       <Routes>
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path="/" element={<Home/>} />
-        <Route path="*" element={<Notfound/>} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
       <Footer/>
     </Router>
