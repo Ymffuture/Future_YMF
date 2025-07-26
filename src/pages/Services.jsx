@@ -83,7 +83,7 @@ const serviceCategories = [
 const Services = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 py-20">
-      <h2 className="text-4xl font-bold text-center mb-14 text-green-700">Our Services</h2>
+      <h2 className="text-4xl font-bold text-center mb-14 text-[#FF0000] ">Our Services</h2>
 
       {serviceCategories.map((category, idx) => (
         <div key={idx} className="mb-16">
@@ -110,7 +110,7 @@ const Services = () => {
                     title={
                       <div className="flex items-center justify-between">
                         <h3 className="text-lg text-green-700">{service.name}</h3>
-                        <Tag color="green">PestGuard</Tag>
+                        <Tag color="#FF0000">Pest control</Tag>
                       </div>
                     }
                     description={<p className="text-gray-600 mt-2">{service.description}</p>}
