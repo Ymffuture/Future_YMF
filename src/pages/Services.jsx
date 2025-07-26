@@ -4,7 +4,7 @@ import { BugOutlined, ToolOutlined, DeleteOutlined } from '@ant-design/icons';
 
 // 📦 Local image imports
 import termiteImg from '../assets/received_746896064595781.jpeg';
-import rodentsImg from '../assets/rodents.jpg';
+import rodentsImg from '../assets/received_746896064595781.jpeg';
 import bedbugsImg from '../assets/bedbugs.jpg';
 import cockroachImg from '../assets/cockroach.jpg';
 import fumigationImg from '../assets/fumigation.jpg';
