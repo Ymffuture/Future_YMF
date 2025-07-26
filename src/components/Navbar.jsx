@@ -50,7 +50,7 @@ const Navbar = () => {
         {/* Logo from public folder */}
         <Link to="/">
           <img
-            src="/logo.png"
+            src="/IMG-20250726-WA0016.jpg"
             alt="PestGuard Logo"
             className="h-10 w-auto object-contain"
           />
