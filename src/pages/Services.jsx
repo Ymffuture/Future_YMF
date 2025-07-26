@@ -4,27 +4,27 @@ const services = [
   {
     name: 'Termite Control',
     description: 'Effective removal of termites from wooden structures, flooring, and walls.',
-    image: '/assets/Messenger_creation_1177669607460733.jpeg ',
+    image: './assets/Messenger_creation_1177669607460733.jpeg ',
   },
   {
     name: 'Rodent Removal',
     description: 'Eliminate rats and mice from your home or business.',
-    image: '/assets/received_749126384429751.jpeg',
+    image: './assets/received_749126384429751.jpeg',
   },
   {
     name: 'Bed Bug Treatment',
     description: 'Safe and quick treatment of bed bugs from furniture and beds.',
-    image: '/assets/received_643489042097518.jpeg',
+    image: './assets/received_643489042097518.jpeg',
   },
   {
     name: 'Cockroach Control',
     description: 'Professional cockroach extermination using eco-friendly methods.',
-    image: '/assets/received_643489042097518.jpeg',
+    image: './assets/received_643489042097518.jpeg',
   },
   {
     name: 'Fumigation',
     description: 'Comprehensive space fumigation for homes, offices, and warehouses.',
-    image: '/assets/received_749126384429751.jpeg ',
+    image: '../assets/received_749126384429751.jpeg ',
   },
 ];
 
