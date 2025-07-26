@@ -45,14 +45,14 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full bg-red-600 shadow z-50">
+    <nav className="fixed w-full bg-[#FF0000] shadow z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo from public folder */}
         <Link to="/">
           <img
             src="/IMG-20250726-WA0016.jpg"
             alt="PestGuard Logo"
-            className="h-10 w-auto object-contain"
+            className="h-10 w-auto object-contain rounded-full"
           />
         </Link>
 
