@@ -32,11 +32,11 @@ const Home = () => {
         transition={{ delay: 1, duration: 0.6 }}
         className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl w-full"
       >
-        <div className="flex flex-col items-center text-white">
+        <div className="flex flex-col items-center ">
           <ShieldCheck className="w-10 h-10 text-[#FFD700] mb-3" />
           <p className="text-sm font-medium">Certified & Safe</p>
         </div>
-        <div className="flex flex-col items-center text-white">
+        <div className="flex flex-col items-center">
           <AlarmClock className="w-10 h-10 text-[#FFD700] mb-3" />
           <p className="text-sm font-medium">Fast Response</p>
         </div>
