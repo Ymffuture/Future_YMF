@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Home = () => {
   return (
-    <section className="flex flex-col justify-center items-center text-center py-28 px-4 bg-black">
+    <section className="flex flex-col justify-center items-center text-center py-28 px-4 ">
       {/* Title */}
       <motion.h2
         initial={{ y: -40, opacity: 0 }}
@@ -20,7 +20,7 @@ const Home = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
-        className="mt-4 text-lg max-w-2xl text-white"
+        className="mt-4 text-lg max-w-2xl"
       >
         We eliminate pests quickly and safely from your home or office.
       </motion.p>
@@ -40,11 +40,11 @@ const Home = () => {
           <AlarmClock className="w-10 h-10 text-[#FFD700] mb-3" />
           <p className="text-sm font-medium">Fast Response</p>
         </div>
-        <div className="flex flex-col items-center text-white">
+        <div className="flex flex-col items-center ">
           <ThumbsUp className="w-10 h-10 text-[#FFD700] mb-3" />
           <p className="text-sm font-medium">Trusted Technicians</p>
         </div>
-        <div className="flex flex-col items-center text-white">
+        <div className="flex flex-col items-center ">
           <PhoneCall className="w-10 h-10 text-[#FFD700] mb-3" />
           <p className="text-sm font-medium">24/7 Support</p>
         </div>
