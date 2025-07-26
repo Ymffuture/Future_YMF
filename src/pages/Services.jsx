@@ -3,7 +3,7 @@ import { Card, Row, Col, Tag } from 'antd';
 import { BugOutlined, ToolOutlined, DeleteOutlined } from '@ant-design/icons';
 
 // 📦 Local image imports
-import termiteImg from '../assets/termite.jpg';
+import termiteImg from '../assets/received_746896064595781.jpeg';
 import rodentsImg from '../assets/rodents.jpg';
 import bedbugsImg from '../assets/bedbugs.jpg';
 import cockroachImg from '../assets/cockroach.jpg';
