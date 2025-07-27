@@ -11,7 +11,7 @@ const About = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        About PestGuard
+        About Moele Pest Solutions
       </motion.h2>
 
       <motion.div
@@ -40,7 +40,7 @@ const About = () => {
         <div className="flex items-start space-x-4">
           <FaMapMarkerAlt className="text-red-500 text-2xl mt-1" />
           <p className="text-lg leading-relaxed">
-            Based in <span className="text-yellow-400 font-semibold">Orange Farm, Johannesburg South</span>, we proudly serve local
+            Based in <span className="text-yellow-400 font-semibold">Polokwane, Lephalale Limpopo</span>, we proudly serve local
             communities with a reputation built on trust, quality, and customer satisfaction.
           </p>
         </div>
