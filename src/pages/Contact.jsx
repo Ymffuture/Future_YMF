@@ -21,7 +21,7 @@ const Contact = () => {
       transition={{ duration: 0.6 }}
     >
       <Title level={2} className="!text-red-600 text-center mb-10 font-bold">
-        Contact PestGuard
+        Contact Moele Pest Solutions
       </Title>
 
       {/* Contact Info Cards */}
@@ -29,8 +29,13 @@ const Contact = () => {
         {[
           {
             icon: <Phone className="text-yellow-400" />,
-            title: 'Call or WhatsApp',
-            desc: '+27 63 441 4863',
+            title: 'Moele N.P (Call or WhatsApp)',
+            desc: '072 316 2651 / 081 775 9870',
+          },
+      {
+            icon: <Phone className="text-yellow-400" />,
+            title: 'Moele L.J (Call or WhatsApp) ',
+            desc: '082 329 9733',
           },
           {
             icon: <Clock className="text-yellow-400" />,
@@ -40,7 +45,7 @@ const Contact = () => {
           {
             icon: <MapPin className="text-yellow-400" />,
             title: 'Location',
-            desc: 'Orange Farm, Johannesburg South',
+            desc: 'Polokwane, Lephalale Limpopo',
           },
           {
             icon: <MessageCircle className="text-yellow-400" />,
