@@ -8,7 +8,10 @@ import rodentsImg from '../assets/received_749126384429751.jpeg';
 import bedbugsImg from '../assets/received_746896064595781.jpeg';
 import cockroachImg from '../assets/cockroach.jpg';
 import fumigationImg from '../assets/terminal3.jpg';
-
+import clean1 from '../assets/surfacesclean.jpeg' 
+import clean2 from '../assets/surfacesclean.jpeg' 
+import clean3 from '../assets/spend.jpeg' 
+import clean4 from '../assets/surfacesclean.jpeg' 
 const serviceCategories = [
   {
     title: 'Pest Management Services',
@@ -53,7 +56,7 @@ const serviceCategories = [
       {
         name: 'Surface Disinfection',
         description: 'Sanitizing walls, countertops, and home surfaces.',
-        image: fumigationImg,
+        image: clean3,
       },
       {
         name: 'Equipment Disinfection',
@@ -74,7 +77,7 @@ const serviceCategories = [
       {
         name: 'Post-Pest Cleaning',
         description: 'Cleaning after pest control to remove smell, droppings and residues.',
-        image: fumigationImg,
+        image: clean1,
       },
     ],
   },
