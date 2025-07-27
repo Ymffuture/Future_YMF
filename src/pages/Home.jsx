@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ShieldCheck, AlarmClock, ThumbsUp, PhoneCall } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
-import pestAnimation from '../assets/lottie/pest-control.json'; // Make sure to add your Lottie file
+import pestAnimation from '../assets/lottie/pest.json'; // Make sure to add your Lottie file
 
 const Home = () => {
   const [showStickyButtons, setShowStickyButtons] = useState(false);
@@ -77,7 +77,7 @@ const Home = () => {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.4 }}
-        href="https://wa.me/27634414863?text=Hi%20I%20need%20pest%20control%20services"
+        href="https://wa.me/27723162651?text=Hi%20I%20need%20pest%20control%20services"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-16 inline-block px-10 py-4 rounded-full bg-[#FF0000] text-white font-bold text-lg shadow-md hover:bg-white hover:text-[#FF0000] hover:border-[#FF0000] border-2 transition-all"
@@ -90,7 +90,7 @@ const Home = () => {
         <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4 items-end">
           {/* WhatsApp Button */}
           <a
-            href="https://wa.me/27634414863?text=Hi%20I%20need%20pest%20control%20services"
+            href="https://wa.me/27723162651?text=Hi%20I%20need%20pest%20control%20services"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-3 bg-[#25D366] text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-[#25D366] border-2 border-[#25D366] transition-all"
@@ -100,7 +100,7 @@ const Home = () => {
 
           {/* Call Button */}
           <a
-            href="tel:+27634414863"
+            href="tel:+27723162651"
             className="px-5 py-3 bg-[#FF0000] text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-[#FF0000] border-2 border-[#FF0000] transition-all"
           >
             Call Us Now
