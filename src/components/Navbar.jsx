@@ -51,8 +51,8 @@ const Navbar = () => {
         <Link to="/">
           <img
             src="/IMG-20250726-WA0016.jpg"
-            alt="PestGuard Logo"
-            className="h-10 w-auto object-contain rounded-full"
+            alt="Moele Pest Solutions Logo"
+            className="h-10 w-auto object-contain rounded-full scale-125"
           />
         </Link>
 
