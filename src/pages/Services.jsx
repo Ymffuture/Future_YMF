@@ -109,8 +109,8 @@ const Services = () => {
                   <Card.Meta
                     title={
                       <div className="flex items-center justify-between">
-                        <h3 className="text-lg text-green-700">{service.name}</h3>
-                        <Tag color="#FF0000">Pest control</Tag>
+                        <h3 className="text-lg text-black">{service.name}</h3>
+                        <Tag color="#FF0000">Moele Pest Solutions/Tag>
                       </div>
                     }
                     description={<p className="text-gray-600 mt-2">{service.description}</p>}
