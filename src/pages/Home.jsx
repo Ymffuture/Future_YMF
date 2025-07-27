@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { ShieldCheck, AlarmClock, ThumbsUp, PhoneCall } from 'lucide-react';
+import { ShieldCheck, AlarmClock, ThumbsUp, PhoneCall, MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
-import pestAnimation from '../assets/Pest.json'; // Make sure to add your Lottie file
+import pestAnimation from '../assets/Pest.json'; // Lottie file
 
 const Home = () => {
   const [showStickyButtons, setShowStickyButtons] = useState(false);
 
-  // Show sticky buttons only after scrolling 200px
   useEffect(() => {
     const handleScroll = () => {
       setShowStickyButtons(window.scrollY > 200);
@@ -17,7 +16,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-br from-red-50 to-yellow-50 py-28 px-6 text-center overflow-hidden shadow-lg">
+    <section className="relative py-28 px-6 text-center overflow-hidden shadow-lg">
       {/* Top Lottie Animation */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -85,25 +84,27 @@ const Home = () => {
         Book on WhatsApp
       </motion.a>
 
-      {/* Sticky Buttons on Scroll */}
+      {/* Sticky Buttons with Icons */}
       {showStickyButtons && (
         <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4 items-end">
-          {/* WhatsApp Button */}
+          {/* WhatsApp Button with Icon */}
           <a
             href="https://wa.me/27723162651?text=Hi%20I%20need%20pest%20control%20services"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-3 bg-[#25D366] text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-[#25D366] border-2 border-[#25D366] transition-all"
+            className="flex items-center gap-2 px-5 py-3 bg-[#25D366] text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-[#25D366] border-2 border-[#25D366] transition-all"
           >
-            Chat on WhatsApp
+            <MessageSquare className="w-5 h-5" />
+            
           </a>
 
-          {/* Call Button */}
+          {/* Call Button with Icon */}
           <a
             href="tel:+27723162651"
-            className="px-5 py-3 bg-[#FF0000] text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-[#FF0000] border-2 border-[#FF0000] transition-all"
+            className="flex items-center gap-2 px-5 py-3 bg-[#FF0000] text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-[#FF0000] border-2 border-[#FF0000] transition-all"
           >
-            Call Us Now
+            <PhoneCall className="w-5 h-5" />
+            
           </a>
         </div>
       )}
