@@ -21,9 +21,9 @@ const Footer = () => {
           <Col xs={24} md={12} className="md:text-right">
             <h3 className="text-lg font-semibold text-white mb-2">Quick Links</h3>
             <div className="flex md:justify-end gap-4 text-gray-300">
-              <Link to="/" className="hover:text-yellow-400 transition">Home</Link>
-              <Link to="/about" className="hover:text-yellow-400 transition">About</Link>
-              <Link to="/services" className="hover:text-yellow-400 transition">Services</Link>
+              <Link to="/" className="hover:text-yellow-400 transition text-[royal blue] ">Home</Link>
+              <Link to="/about" className="hover:text-yellow-400 transition text-[royal blue] ">About</Link>
+              <Link to="/services" className="hover:text-yellow-400 transition text-[royal blue]">Services</Link>
             </div>
           </Col>
         </Row>
@@ -33,11 +33,6 @@ const Footer = () => {
 
         {/* Bottom Row: Social + Contact */}
         <Row gutter={[16, 16]} align="middle" justify="space-between">
-          <Col xs={24} md={12}>
-            <p className="text-center md:text-left text-yellow-400">
-              &copy; {new Date().getFullYear()} <span className="text-white">Moele Pest Solutions</span>. All rights reserved.
-            </p>
-          </Col>
 
           <Col xs={24} md={12} className="text-center md:text-right">
             <div className="flex flex-wrap justify-center md:justify-end items-center gap-4">
@@ -66,6 +61,11 @@ const Footer = () => {
                 📞 081 775 9870 · Stand 20074, Martinique, Abbortspoort, Lephalale 0608
               </span>
             </div>
+          </Col>
+          <Col xs={24} md={12}>
+            <p className="text-center md:text-left text-yellow-400">
+              &copy; {new Date().getFullYear()} <span className="text-white">Moele Pest Solutions</span>. All rights reserved.
+            </p>
           </Col>
         </Row>
       </div>
