@@ -42,7 +42,7 @@ const Footer = () => {
           <Col xs={24} md={12} className="text-center md:text-right">
             <div className="flex flex-wrap justify-center md:justify-end items-center gap-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/1HFjRLLsmH/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -56,7 +56,7 @@ const Footer = () => {
                 <FaXTwitter size={18} className="text-white hover:text-yellow-400 transition" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/moelepestsolutions?igsh=MXM3aXluZ3F5dzZtdA=="
                 target="_blank"
                 rel="noopener noreferrer"
               >
