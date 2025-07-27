@@ -12,6 +12,8 @@ import clean1 from '../assets/surfacesclean.jpeg' ;
 import clean2 from '../assets/images.jpeg' ;
 import clean3 from '../assets/spend.jpeg' ;
 import clean4 from '../assets/ants.jpeg' ;
+import clean5 from '../assets/update.jpeg' 
+import clean6 from '../assets/spreading.jpg' 
 const serviceCategories = [
   {
     title: 'Pest Management Services',
@@ -66,7 +68,7 @@ const serviceCategories = [
       {
         name: 'Furniture Disinfection',
         description: 'Deep cleaning and disinfection of sofas, beds, and chairs.',
-        image: bedbugsImg,
+        image: clean5,
       },
     ],
   },
