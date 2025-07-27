@@ -16,15 +16,15 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="relative py-28 px-6 text-center overflow-hidden shadow-lg">
+    <section className="relative py-28 px-6 text-center overflow-hidden">
       {/* Top Lottie Animation */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="max-w-md mx-auto mb-8"
+        className="max-w-md mx-auto mb-4"
       >
-        <Lottie animationData={pestAnimation} loop={true} />
+        <Lottie animationData={pestAnimation} loop={true}  />
       </motion.div>
 
       {/* Title */}
