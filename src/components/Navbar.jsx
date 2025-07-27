@@ -56,7 +56,7 @@ const Navbar = () => {
           </Link>
           <Tooltip title="Email us">
             <a
-              href="mailto:quorvexinstitute@gmail.com"
+              href="mailto:moelegroup2@gmail.com"
               className="text-white hover:text-yellow-300 transition duration-200"
             >
               <FaEnvelope className="w-5 h-5" />
