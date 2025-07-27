@@ -9,7 +9,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
 
   const handleSubmit = () => {
-    const whatsappURL = `https://wa.me/27634414863?text=Name:%20${formData.name}%0APhone:%20${formData.phone}%0AMessage:%20${formData.message}`;
+    const whatsappURL = `https://wa.me/27723162651?text=Name:%20${formData.name}%0APhone:%20${formData.phone}%0AMessage:%20${formData.message}`;
     window.open(whatsappURL, '_blank');
   };
 
