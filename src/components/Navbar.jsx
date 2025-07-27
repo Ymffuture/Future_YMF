@@ -59,7 +59,7 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6 text-sm font-medium text-white">
           {menuItems.map((item) => (
-            <div key={item.key} className="hover:text-gray-200">
+            <div key={item.key} className="hover:text-gray-200 hover:bg-white">
               {item.label}
             </div>
           ))}
