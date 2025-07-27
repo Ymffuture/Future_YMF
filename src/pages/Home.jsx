@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ShieldCheck, AlarmClock, ThumbsUp, PhoneCall } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
-import pestAnimation from '../assets/lottie/Pest.json'; // Make sure to add your Lottie file
+import pestAnimation from '../assets/Pest.json'; // Make sure to add your Lottie file
 
 const Home = () => {
   const [showStickyButtons, setShowStickyButtons] = useState(false);
