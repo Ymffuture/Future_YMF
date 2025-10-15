@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import { FaFacebookF, FaInstagram, FaXTwitter, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import { FaFacebookF, FaInstagram, FaXTwitter, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -38,27 +38,34 @@ const Footer = () => {
                 href="https://www.facebook.com/share/1HFjRLLsmH/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
               >
                 <FaFacebookF size={18} className="text-[royalblue] hover:text-yellow-400 transition" />
               </a>
-              <a href="https://x.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+              >
                 <FaXTwitter size={18} className="text-white hover:text-yellow-400 transition" />
               </a>
               <a
                 href="https://www.instagram.com/moelepestsolutions?igsh=MXM3aXluZ3F5dzZtdA=="
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
               >
                 <FaInstagram size={18} className="text-pink-500 hover:text-yellow-400 transition" />
               </a>
 
               {/* Contact Info */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 text-white text-sm mt-3 md:mt-0">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-col md:flex-row md:items-center md:gap-4 mt-2 md:mt-0 text-gray-300 text-xs md:text-sm">
+                <div className="flex items-center gap-1">
                   <FaPhoneAlt className="text-yellow-400" />
                   <span>081 775 9870</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1">
                   <FaMapMarkerAlt className="text-yellow-400" />
                   <span>Stand 20074, Martinique, Abbortspoort, Lephalale 0608</span>
                 </div>
