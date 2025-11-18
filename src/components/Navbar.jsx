@@ -102,7 +102,7 @@ const Navbar = () => {
         famacloud.ai@gmail.com
       </a>
       <img
-        src="/IMG-20250726-WA0016.jpg"
+        src="/SNlogo.svg"
         alt="Quorvex Logo"
         className="w-12 h-12 rounded-full mx-auto mt-2"
       />
