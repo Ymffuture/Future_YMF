@@ -1,236 +1,240 @@
-import React, { useEffect, useState, Suspense, useMemo } from 'react';
-import {
-  ShieldCheck,
-  AlarmClock,
-  ThumbsUp,
-  PhoneCall,
-  MessageSquare,
-  AlertTriangle,
-  Paw,
-  FirstAid,
-  Clock
-} from 'lucide-react';
-import { motion } from 'framer-motion';
-import pestAnimation from '../assets/Pest.json'; // Lottie animation file (kept local)
 
-// Lazy-load Lottie so the hero bundle stays small
-const Lottie = React.lazy(() => import('lottie-react'));
+import React, { useEffect, useState, useMemo, useCallback, Suspense, lazy } from "react";
+import { ShieldCheck, AlarmClock, ThumbsUp, PhoneCall, MessageSquare, AlertTriangle } from "lucide-react";
+import { motion } from "framer-motion";
+// Lottie is lazy-loaded to reduce initial bundle size
+const Lottie = lazy(() => import("lottie-react"));
+import pestAnimation from "../assets/Pest.json"; // keep asset import static for bundlers
 
-const FeatureCard = ({ icon, title }) => (
-  <motion.div whileHover={{ scale: 1.03 }} className="flex flex-col items-center text-center p-4">
-    <div className="mb-3">{icon}</div>
-    <p className="text-sm font-medium text-gray-800">{title}</p>
-  </motion.div>
-);
-
-const InfoBadge = ({ icon, title, children }) => (
-  <div className="border rounded-lg p-4 shadow-sm bg-white">
-    <div className="flex items-center gap-3 mb-2">
-      <div className="text-[#FF0000]">{icon}</div>
-      <h4 className="text-lg font-semibold">{title}</h4>
-    </div>
-    <div className="text-sm text-gray-700">{children}</div>
-  </div>
-);
-
-const PetSafetyList = ({ items }) => (
-  <ul className="list-disc list-inside space-y-2 text-sm text-gray-700">
-    {items.map((t) => (
-      <li key={t}>{t}</li>
-    ))}
-  </ul>
-);
-
-const Home = () => {
-  const [showStickyButtons, setShowStickyButtons] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setShowStickyButtons(window.scrollY > 200);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // memoize static arrays to avoid re-creation on each render
-  const features = useMemo(
-    () => [
-      { icon: <ShieldCheck className="w-10 h-10 text-yellow-500" />, label: 'Certified & Safe' },
-      { icon: <AlarmClock className="w-10 h-10 text-yellow-500" />, label: 'Fast Response' },
-      { icon: <ThumbsUp className="w-10 h-10 text-yellow-500" />, label: 'Trusted Technicians' },
-      { icon: <PhoneCall className="w-10 h-10 text-yellow-500" />, label: '24/7 Support' }
-    ],
-    []
-  );
-
-  const negativeEffects = useMemo(
-    () => [
-      'Vomiting or drooling',
-      'Tremors, seizures or uncoordinated movement',
-      'Excessive drooling, pawing at mouth',
-      'Lethargy, weakness, collapse',
-      'Difficulty breathing or rapid breathing',
-      'Severe skin irritation after contact'
-    ],
-    []
-  );
-
-  const firstAid = useMemo(
-    () => [
-      'Remove pet to fresh air and a safe location away from the treated area.',
-      'If the product is on fur/paws: gently wash with mild soap and warm water — avoid getting soap in eyes.',
-      'Do NOT induce vomiting unless directed by a veterinarian or poison control.',
-      'Contact your veterinarian or emergency animal clinic immediately — have product label & time of exposure ready.',
-      'If ingestion of bait or product packaging: bring a sample to the vet and call immediately.'
-    ],
-    []
-  );
-
-  const prevention = useMemo(
-    () => [
-      'Keep pets out of treated areas until surfaces are fully dry (follow product label).',
-      'Secure bait stations where only pests can access them (not pets/children).',
-      'Consider non-chemical methods first for inside spaces (traps, sealing gaps, sanitation).',
-      'Store pesticides securely and out of reach of pets.',
-      'Notify household members and place visible “treated” signs if needed.'
-    ],
-    []
-  );
-
-  return (
-    <section className="relative py-20 px-6 overflow-hidden">
-      {/* Top Lottie */}
-      <div className="max-w-md mx-auto mb-6">
-        <Suspense fallback={<div className="h-48 w-full bg-gray-100 rounded animate-pulse" />}>
-          <Lottie animationData={pestAnimation} loop />
-        </Suspense>
-      </div>
-
-      {/* Hero */}
-      <motion.h2
-        initial={{ y: -40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="text-4xl md:text-6xl font-extrabold text-[#FF0000] text-center drop-shadow-md"
-      >
-        Fast & Reliable Pest Control
-      </motion.h2>
-
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
-        className="mt-5 text-center text-lg md:text-xl max-w-2xl mx-auto text-gray-700"
-      >
-        We eliminate pests quickly and safely from your home or office, with guaranteed protection and 24/7 support.
-      </motion.p>
-
-      {/* Features */}
-      <motion.div
-        initial={{ scale: 0.98, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 1, duration: 0.6 }}
-        className="mt-12 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto"
-      >
-        {features.map((f) => (
-          <FeatureCard key={f.label} icon={f.icon} title={f.label} />
-        ))}
-      </motion.div>
-
-      {/* CTA */}
-      <div className="mt-10 flex justify-center">
-        <a
-          href="https://wa.me/27723162651?text=Hi%20I%20need%20pest%20control%20services"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-8 py-3 rounded-full bg-[#FF0000] text-white font-bold text-lg shadow-md hover:bg-white hover:text-[#FF0000] border-2 border-transparent hover:border-[#FF0000] transition-all"
-        >
-          Book on WhatsApp
-        </a>
-      </div>
-
-      {/* Pets & Safety Section */}
-      <section className="mt-16 max-w-5xl mx-auto">
-        <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-          <Paw className="w-6 h-6 text-[#FF0000]" /> Pets & Safety — Read Before Treatment
-        </h3>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Left column: Info & FAQs */}
-          <div className="space-y-4">
-            <InfoBadge icon={<AlertTriangle className="w-6 h-6" />} title="Why this matters">
-              Pesticides and some baits can cause serious reactions in pets. We always recommend sharing pet information
-              before any treatment so we can use pet-safe approaches. If your pet has been exposed or shows symptoms,
-              follow the first-aid steps and contact your veterinarian immediately. 
-            </InfoBadge>
-
-            <div className="bg-white border rounded-lg p-4 shadow-sm">
-              <h4 className="font-semibold mb-2">Common negative effects (watch for these)</h4>
-              <PetSafetyList items={negativeEffects} />
-            </div>
-
-            <details className="bg-white border rounded-lg p-4 shadow-sm group">
-              <summary className="cursor-pointer font-medium">
-                First aid & emergency steps <span className="ml-2 text-xs text-gray-500">(click to expand)</span>
-              </summary>
-              <div className="mt-3 text-sm text-gray-700">
-                <PetSafetyList items={firstAid} />
-                <p className="mt-3 text-xs text-gray-500">
-                  If in South Africa, have your veterinarian or nearest emergency clinic number ready. Keep the product label
-                  available to show the doctor. In severe cases call your vet or an emergency animal poison control line.
-                </p>
-              </div>
-            </details>
-          </div>
-
-          {/* Right column: Prevention & Quick Tips */}
-          <div className="space-y-4">
-            <InfoBadge icon={<FirstAid className="w-6 h-6" />} title="Prevention & recommended practices">
-              Small changes reduce risk: use enclosed bait stations, keep pets out of rooms during treatment until surfaces
-              are dry, and prefer mechanical traps indoors when possible.
-            </InfoBadge>
-
-            <div className="bg-white border rounded-lg p-4 shadow-sm">
-              <h4 className="font-semibold mb-2">Quick prevention checklist</h4>
-              <PetSafetyList items={prevention} />
-            </div>
-
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 text-sm rounded">
-              <strong className="block">Emergency contact</strong>
-              <p className="text-sm text-gray-700">If you suspect poisoning call your veterinarian or your nearest emergency animal clinic immediately.</p>
+// Simple ErrorBoundary to avoid whole-app crash if Lottie or other child throws
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  componentDidCatch(error, info) {
+    // In prod, send to logging (Sentry/Winston) here
+    // console.error("ErrorBoundary caught:", error, info);
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div role="alert" className="p-4 rounded-lg bg-yellow-50 text-yellow-700 border border-yellow-200">
+          <div className="flex items-start gap-3">
+            <AlertTriangle className="w-6 h-6" />
+            <div>
+              <strong>Animation failed to load.</strong>
+              <div className="text-sm">We still show the main content — try refreshing if needed.</div>
             </div>
           </div>
         </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
-        <div className="mt-6">
-          <details className="bg-white border rounded-lg p-4 shadow-sm">
-            <summary className="cursor-pointer font-semibold">Myths vs facts about pets & pest control</summary>
-            <div className="mt-3 text-sm text-gray-700 space-y-2">
-              <p><strong>Myth:</strong> If a product is “natural” it’s completely safe for pets. <br /><strong>Fact:</strong> Natural products can still be toxic at the wrong dose. Always follow instructions and keep pets away during treatment.</p>
-              <p><strong>Myth:</strong> Dry surfaces are safe immediately. <br /><strong>Fact:</strong> Many residues remain after drying; follow label re-entry intervals and manufacturer guidance.</p>
+// Small custom hook to track scroll threshold (keeps component tidy & testable)
+function useScrollThreshold(threshold = 200) {
+  const [past, setPast] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setPast(window.scrollY > threshold);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [threshold]);
+  return past;
+}
+
+// Accessible accordion item (controlled)
+const AccordionItem = ({ id, title, children, open, onToggle }) => {
+  const buttonId = `acc-btn-${id}`;
+  const panelId = `acc-panel-${id}`;
+  return (
+    <div className="border-b last:border-b-0">
+      <h3>
+        <button
+          id={buttonId}
+          aria-controls={panelId}
+          aria-expanded={open}
+          onClick={onToggle}
+          className="w-full text-left px-4 py-3 flex justify-between items-center focus:outline-none focus:ring focus:ring-offset-2"
+        >
+          <span className="font-semibold">{title}</span>
+          <span aria-hidden className="ml-4">{open ? "▴" : "▾"}</span>
+        </button>
+      </h3>
+      <div
+        id={panelId}
+        role="region"
+        aria-labelledby={buttonId}
+        hidden={!open}
+        className="px-4 pb-4 text-sm text-gray-700"
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
+
+const Home = () => {
+  const showStickyButtons = useScrollThreshold(200);
+  const [openId, setOpenId] = useState(null);
+
+  // memoized features to avoid reallocation on each render
+  const features = useMemo(
+    () => [
+      { Icon: ShieldCheck, label: "Certified & Safe" },
+      { Icon: AlarmClock, label: "Fast Response" },
+      { Icon: ThumbsUp, label: "Trusted Technicians" },
+      { Icon: PhoneCall, label: "24/7 Support" }
+    ],
+    []
+  );
+
+  const toggleAccordion = useCallback((id) => {
+    setOpenId((prev) => (prev === id ? null : id));
+  }, []);
+
+  return (
+    <section className="relative py-20 px-6 text-center overflow-hidden max-w-7xl mx-auto">
+      {/* Top Lottie Animation - lazy and suspended */}
+      <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="max-w-md mx-auto mb-6">
+        <ErrorBoundary>
+          <Suspense fallback={<div className="py-10">Loading animation...</div>}>
+            <Lottie animationData={pestAnimation} loop={true} />
+          </Suspense>
+        </ErrorBoundary>
+      </motion.div>
+
+      <motion.h2 initial={{ y: -30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }} className="text-3xl md:text-5xl font-extrabold text-red-600 drop-shadow-md">
+        Fast & Reliable Pest Control
+      </motion.h2>
+
+      <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25 }} className="mt-4 text-base md:text-lg max-w-3xl mx-auto text-gray-700">
+        We eliminate pests quickly and safely from your home or office — we also follow recommended risk-reduction approaches and explain trade-offs so you can make an informed choice.
+      </motion.p>
+
+      {/* Features */}
+      <motion.div initial={{ scale: 0.98, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 0.6 }} className="mt-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        {features.map(({ Icon, label }) => (
+          <motion.div key={label} whileHover={{ scale: 1.03 }} className="flex flex-col items-center text-center">
+            <Icon className="w-10 h-10 text-yellow-500 mb-3" aria-hidden />
+            <p className="text-sm font-medium text-gray-800">{label}</p>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* Main CTA */}
+      <motion.a
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1 }}
+        href="https://wa.me/27723162651?text=Hi%20I%20need%20pest%20control%20services"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-8 inline-block px-8 py-3 rounded-full bg-red-600 text-white font-semibold text-base shadow-md hover:bg-white hover:text-red-600 border-2 border-red-600 transition-colors focus:outline-none focus:ring focus:ring-offset-2"
+      >
+        Book on WhatsApp
+      </motion.a>
+
+      {/* Negative outcomes & facts (accessible accordion) */}
+      <section aria-labelledby="negatives-heading" className="mt-14 max-w-4xl mx-auto text-left">
+        <h3 id="negatives-heading" className="text-xl font-bold mb-4">Negative outcomes & important facts</h3>
+        <p className="mb-4 text-sm text-gray-700">
+          We believe in transparency. Below are common downsides, long-term concerns, and safe alternatives so you can decide what's right for your space.
+        </p>
+
+        <div className="border rounded-md divide-y">
+          <AccordionItem
+            id="health"
+            title="Health risks of pesticides"
+            open={openId === "health"}
+            onToggle={() => toggleAccordion("health")}
+          >
+            <p>
+              Some pesticide chemistries (especially organophosphates, carbamates and older classes) can affect the nervous system and are linked to other health outcomes when exposure is high or frequent. People with respiratory sensitivity, pregnant women and children are more vulnerable.
+            </p>
+            <div className="mt-2 text-xs text-gray-600">
+              Sources: EPA health risk summaries and recent systematic reviews.
             </div>
-          </details>
+          </AccordionItem>
+
+          <AccordionItem
+            id="resistance"
+            title="Resistance & reduced long-term effectiveness"
+            open={openId === "resistance"}
+            onToggle={() => toggleAccordion("resistance")}
+          >
+            <p>
+              Repeated use of the same insecticide classes selects for resistant individuals, causing treatments to fail over time. Rotating methods and judicious use is important.
+            </p>
+            <div className="mt-2 text-xs text-gray-600">Sources: CDC/WHO resistance literature.</div>
+          </AccordionItem>
+
+          <AccordionItem
+            id="environment"
+            title="Environmental & non-target impacts"
+            open={openId === "environment"}
+            onToggle={() => toggleAccordion("environment")}
+          >
+            <p>
+              Pesticides can harm beneficial insects (pollinators), birds, aquatic organisms, and reduce biodiversity when misused. Runoff and drift are common pathways to contamination.
+            </p>
+            <div className="mt-2 text-xs text-gray-600">Sources: peer-reviewed syntheses and NGO analyses.</div>
+          </AccordionItem>
+
+          <AccordionItem
+            id="recurrence"
+            title="Treatment failures & recurring infestations"
+            open={openId === "recurrence"}
+            onToggle={() => toggleAccordion("recurrence")}
+          >
+            <p>
+              If root causes (entry points, food/water sources) are not addressed, pests return — leading to repeated treatments and higher cost/chemical exposure. Structural fixes + sanitation are often required.
+            </p>
+          </AccordionItem>
+
+          <AccordionItem
+            id="legal"
+            title="Regulatory & safety compliance"
+            open={openId === "legal"}
+            onToggle={() => toggleAccordion("legal")}
+          >
+            <p>
+              Some chemicals are restricted in different countries. Professional applicators follow label instructions and local regulations — do not attempt unauthorized commercial treatments yourself.
+            </p>
+          </AccordionItem>
+        </div>
+
+        <div className="mt-4 text-sm text-gray-700">
+          <strong>Recommended approach:</strong> Prefer Integrated Pest Management (IPM): inspection, monitoring, exclusion, sanitation, targeted low-toxicity products, and only use higher-toxicity pesticides as last resort. Your service should explain trade-offs and record what was used and why.
         </div>
       </section>
 
       {/* Sticky Buttons */}
       {showStickyButtons && (
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-end">
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4 items-end">
           <a
             href="https://wa.me/27723162651?text=Hi%20I%20need%20pest%20control%20services"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-3 bg-[#25D366] text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-[#25D366] border-2 border-transparent hover:border-[#25D366] transition-all"
-            aria-label="Contact via WhatsApp"
+            className="flex items-center gap-2 px-4 py-3 bg-green-500 text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-green-500 border-2 border-green-500 transition-colors focus:outline-none focus:ring focus:ring-offset-2"
+            aria-label="Message on WhatsApp"
           >
-            <MessageSquare className="w-5 h-5" />
+            <MessageSquare className="w-5 h-5" aria-hidden />
             <span className="sr-only">WhatsApp</span>
           </a>
 
           <a
             href="tel:+27723162651"
-            className="flex items-center gap-2 px-4 py-3 bg-[#FF0000] text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-[#FF0000] border-2 border-transparent hover:border-[#FF0000] transition-all"
-            aria-label="Call us"
+            className="flex items-center gap-2 px-4 py-3 bg-red-600 text-white font-semibold rounded-full shadow-lg hover:bg-white hover:text-red-600 border-2 border-red-600 transition-colors focus:outline-none focus:ring focus:ring-offset-2"
+            aria-label="Call"
           >
-            <PhoneCall className="w-5 h-5" />
+            <PhoneCall className="w-5 h-5" aria-hidden />
             <span className="sr-only">Call</span>
           </a>
         </div>
