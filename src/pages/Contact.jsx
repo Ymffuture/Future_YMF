@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Form, Input, Button, Typography, Card } from 'antd';
+import { Form, Input, Button, Typography } from 'antd';
 import { motion } from 'framer-motion';
-import { Phone, Clock, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, Clock, MapPin, MessageCircle, Mail } from 'lucide-react';
+import { FaWhatsapp, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 const { Title } = Typography;
 
@@ -13,9 +14,26 @@ const Contact = () => {
     window.open(whatsappURL, '_blank');
   };
 
+  const contacts = [
+    {
+      name: 'Moele N.P',
+      phone: '0723162651',
+      whatsapp: '0723162651',
+      email: 'moelegroup2@gmail.com',
+      location: 'Polokwane, Lephalale Limpopo',
+    },
+    {
+      name: 'Moele L.J',
+      phone: '0823299733',
+      whatsapp: '0823299733',
+      email: 'moelegroup2@gmail.com',
+      location: 'Polokwane, Lephalale Limpopo',
+    },
+  ];
+
   return (
     <motion.section
-      className="max-w-3xl mx-auto py-20 px-4"
+      className="max-w-4xl mx-auto py-20 px-4"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -25,45 +43,52 @@ const Contact = () => {
       </Title>
 
       {/* Contact Info Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-        {[
-          {
-            icon: <Phone className="text-yellow-400" />,
-            title: 'Moele N.P (Call or WhatsApp)',
-            desc: '072 316 2651 / 081 775 9870',
-          },
-      {
-            icon: <Phone className="text-yellow-400" />,
-            title: 'Moele L.J (Call or WhatsApp) ',
-            desc: '082 329 9733',
-          },
-          {
-            icon: <Clock className="text-yellow-400" />,
-            title: 'Working Hours',
-            desc: 'Mon–Sat: 08:00–18:00',
-          },
-          {
-            icon: <MapPin className="text-yellow-400" />,
-            title: 'Location',
-            desc: 'Polokwane, Lephalale Limpopo',
-          },
-          {
-            icon: <MessageCircle className="text-yellow-400" />,
-            title: 'Send a Message',
-            desc: 'We usually reply within 1 hour.',
-          },
-        ].map(({ icon, title, desc }, index) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+        {contacts.map((contact, idx) => (
           <motion.div
-            key={index}
-            className="bg-black text-white p-4 rounded-md shadow-lg flex gap-4 items-start"
+            key={idx}
+            className="bg-black text-white p-6 rounded-lg shadow-lg flex flex-col gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 * index }}
+            transition={{ delay: 0.1 * idx }}
           >
-            <div className="text-2xl">{icon}</div>
-            <div>
-              <p className="text-base font-semibold text-yellow-300">{title}</p>
-              <p className="text-sm text-gray-300">{desc}</p>
+            <div className="text-lg font-semibold text-yellow-300">{contact.name}</div>
+            <div className="flex flex-col gap-2 text-gray-300">
+              <div className="flex items-center gap-2">
+                <Phone className="text-yellow-400" size={20} />
+                <span>{contact.phone}</span>
+                <a
+                  href={`tel:${contact.phone}`}
+                  className="ml-auto text-green-400 hover:text-green-500 transition"
+                  title="Call"
+                >
+                  <FaPhone />
+                </a>
+                <a
+                  href={`https://wa.me/27${contact.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-500 hover:text-green-600 transition"
+                  title="WhatsApp"
+                >
+                  <FaWhatsapp />
+                </a>
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="text-blue-500 hover:text-blue-600 transition"
+                  title="Email"
+                >
+                  <FaEnvelope />
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <MapPin className="text-yellow-400" size={20} />
+                <span>{contact.location}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="text-yellow-400" size={20} />
+                <span>Mon–Sat: 08:00–18:00</span>
+              </div>
             </div>
           </motion.div>
         ))}
@@ -71,11 +96,14 @@ const Contact = () => {
 
       {/* WhatsApp Contact Form */}
       <motion.div
-        className="bg-white p-6 rounded-lg shadow border"
+        className="bg-white p-8 rounded-lg shadow-lg border"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
       >
+        <Title level={4} className="text-red-600 font-bold mb-6 text-center">
+          Send us a Message
+        </Title>
         <Form layout="vertical" onFinish={handleSubmit}>
           <Form.Item label="Your Name" required>
             <Input
@@ -109,10 +137,10 @@ const Contact = () => {
             <Button
               type="primary"
               htmlType="submit"
-              className="bg-red-600 hover:bg-red-700 text-white w-full"
+              className="bg-red-600 hover:bg-red-700 text-white w-full flex items-center justify-center gap-2"
               size="large"
             >
-              Send via WhatsApp
+              <FaWhatsapp /> Send via WhatsApp
             </Button>
           </Form.Item>
         </Form>
@@ -122,5 +150,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
-
