@@ -94,7 +94,7 @@ const Navbar = () => {
   footer={
     <div className="text-center border-t pt-4">
       <p className="text-sm text-gray-500">Powered by</p>
-      <p className="text-red-600 font-semibold text-sm">SwiftNode™</p>
+      <p className="text-red-600 font-semibold text-sm">SwiftMeta™</p>
       <a
         href="mailto:futurekgomotso@gmail.com"
         className="text-sm text-blue-600 hover:underline block mt-1"
