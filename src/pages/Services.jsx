@@ -182,7 +182,7 @@ const serviceCategories = [
 
 const Services = () => {
   return (
-    <section className="px-6 py-20 bg-black text-white">
+    <section className="px-6 py-20">
       <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10">
         Our Services
       </h2>
