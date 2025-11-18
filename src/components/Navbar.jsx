@@ -192,10 +192,10 @@ const Navbar = () => {
         </div>
 
         {/* GOOGLE MAP SECTION */}
-        <div className="mt-8 px-4">
+        <div className="mt-2 px-4">
           <h3 className="text-gray-700 font-semibold mb-2">Our Location</h3>
 
-          <div className="w-full h-56 rounded-xl overflow-hidden border shadow-md">
+          <div className="w-full h-56 rounded-xl overflow-hidden shadow-md">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.766753534208!2d27.881!3d-26.3819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9513e37f96da63%3A0x1ef7b5f85c9b6131!2sDrieziek%204%2C%20Orange%20Farm%2C%20Johannesburg%20South!5e0!3m2!1sen!2za!4v1731470000000"
               width="100%"
