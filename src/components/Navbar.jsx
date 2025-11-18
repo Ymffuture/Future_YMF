@@ -82,8 +82,8 @@ const Navbar = () => {
       {/* Mobile Drawer */}
       <Drawer
   title={
-    <div className="text-red-600 text-sm text-center w-full">
-      MPC
+    <div className="text-gray-600 text-sm text-center w-full">
+    ...
     </div>
   }
   placement="bottom"
@@ -96,16 +96,16 @@ const Navbar = () => {
       <p className="text-sm text-gray-500">Powered by</p>
       <p className="text-red-600 font-semibold text-sm">SwiftNode™</p>
       <a
-        href="mailto:quorvexinstitute@gmail.com"
+        href="mailto:futurekgomotso@gmail.com"
         className="text-sm text-blue-600 hover:underline block mt-1"
       >
-        famacloud.ai@gmail.com
-      </a>
-      <img
+        <img
         src="/SNlogo.svg"
         alt="Quorvex Logo"
         className="w-12 h-12 rounded-full mx-auto mt-2"
       />
+      </a>
+      
     </div>
   }
 >
