@@ -1,18 +1,12 @@
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00FFEA"/>
-      <stop offset="100%" stop-color="#0084FF"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-  <path d="M50 140 Q100 100 150 60" stroke="url(#g1)" stroke-width="20" fill="none" filter="url(#glow)"/>
-  <path d="M130 80 L165 45 L150 80 L165 115 Z" fill="url(#g1)" filter="url(#glow)"/>
-  <circle cx="165" cy="45" r="12" fill="#00FFEA" filter="url(#glow)"/>
+  <circle cx="100" cy="100" r="80" fill="#0B0E17" stroke="#00FFEA" stroke-width="3"/>
+  <circle cx="100" cy="100" r="20" fill="#00FFEA">
+    <animate attributeName="r" values="20;28;20" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <path d="M100 100 Q70 70 70 100 Q70 130 100 130" fill="none" stroke="#00FFEA" stroke-width="8">
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M100 100 Q130 70 130 100 Q130 130 100 130" fill="none" stroke="#00FFEA" stroke-width="8">
+    <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </path>
 </svg>
