@@ -15,9 +15,9 @@ import rodentsImg from "../assets/received_749126384429751.jpeg";
 import bedbugsImg from "../assets/received_746896064595781.jpeg";
 import cockroachImg from "../assets/cockroach.jpg";
 import fumigationImg from "../assets/terminal3.jpg";
-import clean1 from "../assets/surfacesclean.jpeg";
-import clean2 from "../assets/images.jpeg";
-import clean5 from "../assets/update.jpeg";
+import clean1 from "../assets/IMG-20251117-WA0002.jpg";
+import clean2 from "../assets/IMG-20251117-WA0003.jpg";
+import clean5 from "../assets/IMG-20251117-WA0004.jpg";
 import clean4 from "../assets/ants.jpeg";
 
 const serviceCategories = [
