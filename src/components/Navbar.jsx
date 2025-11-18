@@ -81,33 +81,37 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       <Drawer
-        title={
-          <div className="text-red-600 font-bold text-lg">Menu</div>
-        }
-        placement="right"
-        onClose={() => setOpen(false)}
-        open={open}
-        className="md:hidden"
-        footer={
-          <div className="text-center border-t pt-4">
-            <p className="text-sm text-gray-500">Powered by</p>
-            <p className="text-red-600 font-semibold text-sm">Quorvex Institute</p>
-            <a
-              href="mailto:quorvexinstitute@gmail.com"
-              className="text-sm text-blue-600 hover:underline block mt-1"
-            >
-              quorvexinstitute@gmail.com
-            </a>
-            <img
-              src="/IMG-20250726-WA0016.jpg"
-              alt="Quorvex Logo"
-              className="w-12 h-12 rounded-full mx-auto mt-2"
-            />
-          </div>
-        }
+  title={
+    <div className="text-red-600 font-bold text-lg text-center w-full">
+      Menu
+    </div>
+  }
+  placement="bottom"
+  height="80%"               // makes it feel like a mobile sheet
+  onClose={() => setOpen(false)}
+  open={open}
+  className="md:hidden custom-bottom-drawer"
+  footer={
+    <div className="text-center border-t pt-4">
+      <p className="text-sm text-gray-500">Powered by</p>
+      <p className="text-red-600 font-semibold text-sm">Quorvex Institute</p>
+      <a
+        href="mailto:quorvexinstitute@gmail.com"
+        className="text-sm text-blue-600 hover:underline block mt-1"
       >
-        <Menu mode="vertical" items={menuItems} selectable={false} />
-      </Drawer>
+        quorvexinstitute@gmail.com
+      </a>
+      <img
+        src="/IMG-20250726-WA0016.jpg"
+        alt="Quorvex Logo"
+        className="w-12 h-12 rounded-full mx-auto mt-2"
+      />
+    </div>
+  }
+>
+  <Menu mode="vertical" items={menuItems} selectable={false} />
+</Drawer>
+
     </nav>
   );
 };
