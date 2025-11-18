@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+
+.custom-bottom-drawer .ant-drawer-content {
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+  overflow: hidden !important;
+}
+
+.custom-bottom-drawer .ant-drawer-header {
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+}
+
+.custom-bottom-drawer .ant-drawer-body {
+  padding: 0 16px !important;
+}
