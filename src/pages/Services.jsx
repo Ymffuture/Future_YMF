@@ -201,7 +201,7 @@ const Services = () => {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.05 }}
-                className="w-72 flex-shrink-0 bg-neutral-900 rounded-xl shadow-lg cursor-pointer transition-all"
+                className="w-72 flex-shrink-0 rounded-xl shadow-lg cursor-pointer transition-all"
               >
                 <div className="relative h-44 w-full overflow-hidden rounded-t-xl">
                   <img
@@ -225,7 +225,7 @@ const Services = () => {
 
                   {/* How it works */}
                   <div className="mt-3">
-                    <p className="font-semibold mb-1 text-red-400">
+                    <p className="font-semibold mb-1 text-red-400 bg-neutral-900 p-2 rounded">
                       How It Works:
                     </p>
                     <ul className="text-gray-400 text-xs space-y-1">
