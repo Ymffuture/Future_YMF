@@ -140,11 +140,11 @@ const Navbar = () => {
         footer={
           <div className="text-center border-t pt-4">
             <p className="text-sm text-gray-500">Powered by</p>
-            <p className="text-red-600 font-semibold text-sm">SwiftMeta™</p>
+            <p className="text-red-600 font-semibold text-sm"> <a href="https://swiftmeta.vercel.app/" >SwiftMeta™</a></p>
             <img
               src="/SNlogo.svg"
               alt="SwiftMeta Logo"
-              className="w-12 h-12 rounded-full mx-auto mt-2"
+              className="w-18 h-18 rounded-full mx-auto mt-2"
             />
           </div>
         }
