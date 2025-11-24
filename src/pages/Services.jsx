@@ -14,7 +14,7 @@ import termiteImg from "../assets/IMG-20251118-WA0004.jpg";
 import rodentsImg from "../assets/IMG-20251118-WA0000.jpg";
 import bedbugsImg from "../assets/IMG-20251118-WA0002.jpg";
 import cockroachImg from "../assets/IMG-20251118-WA0003.jpg";
-import fumigationImg from "../assets/ants.jpg";
+import fumigationImg from "../assets/ants.jpeg";
 import clean1 from "../assets/IMG-20251117-WA0002.jpg";
 import clean2 from "../assets/IMG-20251117-WA0003.jpg";
 import clean5 from "../assets/IMG-20251117-WA0004.jpg";
