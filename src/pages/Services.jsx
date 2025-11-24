@@ -10,15 +10,15 @@ import {
   Sparkles,
 } from "lucide-react";
 
-import termiteImg from "../assets/terminal.jpg";
-import rodentsImg from "../assets/received_749126384429751.jpeg";
-import bedbugsImg from "../assets/received_746896064595781.jpeg";
-import cockroachImg from "../assets/cockroach.jpg";
-import fumigationImg from "../assets/terminal3.jpg";
+import termiteImg from "../assets/IMG-20251118-WA0004.jpg";
+import rodentsImg from "../assets/IMG-20251118-WA0000.jpg";
+import bedbugsImg from "../assets/IMG-20251118-WA0002.jpg";
+import cockroachImg from "../assets/IMG-20251118-WA0003.jpg";
+import fumigationImg from "../assets/IMG-20251118-WA0000.jpg";
 import clean1 from "../assets/IMG-20251117-WA0002.jpg";
 import clean2 from "../assets/IMG-20251117-WA0003.jpg";
 import clean5 from "../assets/IMG-20251117-WA0004.jpg";
-import clean4 from "../assets/ants.jpeg";
+import clean4 from "../assets/IMG-20251118-WA0001.jpg";
 
 const serviceCategories = [
   {
